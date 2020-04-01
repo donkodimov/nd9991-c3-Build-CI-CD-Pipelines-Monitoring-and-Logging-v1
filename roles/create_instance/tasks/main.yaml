@@ -1,3 +1,7 @@
+
+- name: check file
+  debug: msg="{{ lookup('file', 'user_data.sh', errors='strict') }}"
+  
 - name: Create the ELB only listening over port 80
   ec2_elb_lb:
     name: "{{ ELBNAME }}"
