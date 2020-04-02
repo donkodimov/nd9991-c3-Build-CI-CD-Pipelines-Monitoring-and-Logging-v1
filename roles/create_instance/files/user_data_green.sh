@@ -2,6 +2,7 @@
 set -e -x
 export DEBIAN_FRONTEND=noninteractive
 sudo locale-gen pt_BR.UTF-8
+sudo apt-get update
 sudo apt-get install -y nginx
 cat > /etc/nginx/sites-enabled/default << EOF
 server {
@@ -9,7 +10,7 @@ server {
     #listen   [::]:80 default_server ipv6only=on; ## listen for ipv6
 
     listen 80;
-    server_name www.wread.com;
+    server_name www.test.com;
     root /var/www/html;
     index index.html index.htm;
     access_log /var/log/nginx/access.log;
